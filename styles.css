@@ -61,7 +61,11 @@
     color:white;
     opacity : 40%;
     padding : 2;
-    z-index: 99;
+    z-index: 2;
+  }
+
+  #gears {
+    z-index: 1;
   }
   
   .gear {
@@ -126,7 +130,7 @@
   }
   
   #g1 {
-      top: 70%;
+      top: 30%;
     left : 45%;
     animation : spin 7s linear infinite;
   }
