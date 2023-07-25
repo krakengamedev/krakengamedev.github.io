@@ -254,3 +254,7 @@ footer {
 #contact-href #projects-href{
   top : -10%;
 }
+
+section p {
+  margin : 5px;
+}
