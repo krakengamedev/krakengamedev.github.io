@@ -75,14 +75,14 @@
 
         <div class="project-tile">
           <h2>Touch The Edge</h2>
-          <img src="tte.gif" class="gif-img">
+          <img src="tte.png" class="gif-img">
           <p>A beat-em-up game written in C++ using SFML.</p>
           <a class="glink" href="https://github.com/krakengamedev/touch_the_edge">Github Link</a>
         </div>
 
         <div class="project-tile">
           <h2>Mythos Engine</h2>
-          <img src="mythos.gif" class="gif-img">
+          <img src="mythos.png" class="gif-img">
           <p>A 2D game engine for the Nintendo Game Boy Advance</p>
           <a class="glink" href="https://github.com/krakengamedev/mythos">Github Link</a>
         </div>
@@ -106,6 +106,10 @@
     </section>
   </body>
 
+  <div id="fullscreen-window">
+    <span id="close-btn">X</span>
+  </div>
+
   <footer>
     <h2>Attributions</h2>
     <a href="https://www.flaticon.com/free-icons/cat" title="cat icons">Cat icon created by Victoruler - Flaticon</a>
@@ -114,4 +118,34 @@
     <br>
     <br>
   </footer>
+
+  <script>
+    // Get references to the elements
+    const gallery = document.querySelector('#projects-div');
+    const fullscreenContainer = document.querySelector('#fullscreen-window');
+    const fullscreenImg = document.querySelector('#fullscreen-img');
+    const closeBtn = document.querySelector('#close-btn');
+  
+    // Function to handle image click
+    function expandImage(imageSrc) {
+      const gifSrc = imageSrc.replace('.png', '.gif');
+      fullscreenContainer.style.backgroundImage = `url(${gifSrc})`;
+      fullscreenContainer.style.display = 'flex';
+    }
+  
+    // Function to close the full-screen view
+    function closeFullscreen() {
+      fullscreenContainer.style.display = 'none';
+    }
+  
+    // Add event listeners to the thumbnail images
+    gallery.addEventListener('click', (event) => {
+      if (event.target.tagName === 'IMG') {
+        expandImage(event.target.src);
+      }
+    });
+  
+    // Add event listener to the close button
+    closeBtn.addEventListener('click', closeFullscreen);
+  </script>
 </html>
